@@ -1,38 +1,319 @@
 .App {
-  text-align: center;
+  padding: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-item {
+  margin: 0 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-item a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #12052c;
+  padding: 0px 35px;
+}
+
+.nav-item a:hover {
+  color: #1769e4;
+}
+
+.payment-container {
+  display: flex;
+  border-top: 3px solid #f3f2f2;
+  border-bottom: 3px solid #f3f2f2;
+  padding: 30px 0px;
+  margin-top: 20px;
+}
+
+.payment-info {
+  width: 45%;
+}
+
+.payment-info .p-text {
+  color: #635f69;
+}
+
+.info {
+  width: 55%;
+}
+
+.logos {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo img {
+  width: 50px;
+  padding: 20px;
+}
+
+.logo .paypal {
+  width: 100px;
+}
+
+.logo-circle {
+  background: #cecece;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.info {
   display: flex;
   flex-direction: column;
+  align-content: flex-end;
+}
+
+.info .space {
+  width: 50px;
+  height: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-line {
+  display: flex;
+  /* justify-content: space-between; */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-group label {
+  padding: 10px 0px;
+}
+
+.form-group input {
+  width: 300px;
+  height: 35px;
+  background: #f3f2f2;
+  border: 2px solid #e4e4e4;
+  border-radius: 3px;
+}
+
+.check {
+  display: block;
+  position: relative;
+  padding: 30px 0px;
+  margin-top: 30px;
+}
+
+.btn {
+  text-align: center;
+  width: 100%;
+}
+
+.btn {
+  padding: 18px 0px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #1769e4;;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prices {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #f3f2f2;
+}
+
+.prices .price-group h3 {
+  margin: 10px;
+}
+
+.price-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-group span {
+  color: #e4e4e4;
+}
+
+.total {
+  padding: 20px 0px;
+}
+
+.total .btn {
+  width: 20%;
+}
+
+.btn:hover {
+  background: #094298;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+@media (min-width: 368px) and (max-width: 560px) {
+
+  .nav {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .info {
+    width: 100%;
+  }
+
+  .logos {
+    justify-content: center;
+  }
+
+  .payment-container {
+    flex-direction: column;
+  }
+
+  .payment-info .card img{
+    width: 100%;
+  }
+
+  .form-line {
+    flex-direction: column;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .payment-info {
+    width: 100%;
   }
 }
+
+@media (min-width: 560px) and (max-width: 1024px) {
+  .info {
+    width: 100%;
+  }
+
+  .logos {
+    justify-content: center;
+  }
+
+  .payment-container {
+    flex-direction: column;
+  }
+
+  .payment-info .card img{
+    width: 100%;
+  }
+
+  .form-line {
+    flex-direction: column;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .payment-info {
+    width: 100%;
+  }
+}
+
+/* @media (min-width: 680px) {
+
+  .info {
+    width: 100%;
+  }
+
+  /* .logos {
+    justify-content: center;
+  } */
+
+  /* .payment-container {
+    flex-direction: column;
+  } */
+
+  /* .payment-info .card img{
+    width: 100%;
+  } */
+
+  /* .form-line {
+    flex-direction: column;
+  } */
+
+  /* .form-group input {
+    width: 100%;
+  } */
+  
+/* }  */
